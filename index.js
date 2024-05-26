@@ -89,7 +89,7 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine","ejs");
-app.use('/public',express.static('public'));
+app.use('/public',express.static(path.join(__dirname, 'public')));
 // // Create an instance of Axios for making HTTP requests.
 // const axiosInstance = axios.create();
 
