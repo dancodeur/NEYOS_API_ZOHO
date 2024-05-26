@@ -3,8 +3,12 @@ import fetch from "node-fetch";
 import dotenv from "dotenv";
 import express from "express";
 import axios from "axios";
+import { fileURLToPath } from 'url';
 import path from "path";
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Fonction pour encoder les données en URL
 const encodeFormData = (data) => {
@@ -83,8 +87,8 @@ async function get_access_token(client_id="",client_secret="",redirect_uri="",co
 ;
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
+app.set("views", path.join(__dirname,"views"));
 app.set("view engine","ejs");
-app.set("views","./views");
 app.use('/public',express.static('public'));
 // // Create an instance of Axios for making HTTP requests.
 // const axiosInstance = axios.create();

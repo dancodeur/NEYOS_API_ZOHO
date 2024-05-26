@@ -2,10 +2,10 @@
   "name": "neyos_api_zoho",
   "version": "1.0.0",
   "description": "api_zoho_from_neyos_data",
-  "main": "index.cjs",
   "type": "module",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
