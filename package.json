@@ -1,0 +1,19 @@
+{
+  "name": "neyos_api_zoho",
+  "version": "1.0.0",
+  "description": "api_zoho_from_neyos_data",
+  "main": "index.cjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}

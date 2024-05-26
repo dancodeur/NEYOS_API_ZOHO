@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEYOS - authorization-request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../public/img/Fichier 12Recharge.png">
+</head>
+<body>
+    <div class="min-h-screen space-y-4 mx-auto p-3 flex flex-col align-center" style="background-image: url('/public/img/Splash-600.jpg');">
+        <section class="mx-auto w-[50%] flex flex-col justify-center space-y-4">
+            <img src="/public/img/Fichier 12Recharge.png" alt="" srcset="" class="h-[60px] w-[60px] self-center">
+            <h1 class="text-4xl text-white text-center">Authorization-Request</h1>
+        </section>
+
+        <div class="bg-neutral-800 space-y-4 text-neutral-200 text-xs mx-auto p-3 rounded shadow-sm">
+           <pre><code><%=JSON.stringify(generate_auth_token, null, 2) %></code></pre>
+           <p class="text-sm"> <span class="text-green-500">NB:</span> Pour personnaliser le scope faire comme ceci : http://localhost:3000/authorization-request/<span class="text-green-500">{scope personnaliser}</span></p>         
+        </div>
+
+
+        <div class="bg-neutral-800 space-y-4 mx-auto w-[50%] p-4 rounded shadow-sm">
+            <details class="text-neutral-200 ">
+                <summary class="bg-green-600 p-3 rounded text-white">Etape 1 </summary>
+                <p>Copier le lien ci-dessus sur la barre d'url de votre client (chrome,firefox,safari etc...)</p>
+            </details>
+    
+            <details class="text-neutral-200 space-y-2 ">
+                <summary class="bg-green-600 p-3 rounded text-white">Etape 2</summary>
+                  <p>Vous serez rediriger sur notre site internet https://www.neyos.fr</p>
+                  <p>Ensuite, copier le code générer comme sur l'image en dessous.</p>
+                  <img src="../public/img/code.png" alt="" srcset="" class="">
+            </details>
+    
+            <details class="text-neutral-200 space-y-2 ">
+                <summary class="bg-green-600 p-3 rounded text-white">Etape 3</summary>
+                <p>Une fois que vous avez le code token, vous pouvez pourrez obtenir le token access et le token refresh en cliquant sur ce <a target="_blank" class="text-green-500" href="http://localhost:3000/access-token/1000.e43f1358c5f1db8433fca5bf152d164b.a581825a95ddce00f3f50cc74b20a25f">lien</a></p>
+                <span class="text-xs">Exemple:  <code>http://localhost:3000/access-token/<span class="text-green-500">{remplacer le code d'exemple}</span></code> </span>
+            </details>
+            
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>

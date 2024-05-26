@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEYOS - authorization-request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../public/img/Fichier 12Recharge.png">
+</head>
+<body>
+    <div class="min-h-screen space-y-4 mx-auto p-3 flex flex-col align-center" style="background-image: url('/public/img/Splash-600.jpg');">
+        <section class="mx-auto w-[50%] flex flex-col justify-center space-y-4">
+            <img src="/public/img/Fichier 12Recharge.png" alt="" srcset="" class="h-[60px] w-[60px] self-center">
+            <h1 class="text-4xl text-white text-center">Authorization-Request : custom scope</h1>
+        </section>
+
+        <div class="bg-neutral-800 space-y-4 text-neutral-200 text-xs mx-auto p-3 rounded shadow-sm">
+           <pre><code><%=JSON.stringify(generate_auth_token, null, 2) %></code></pre>
+        </div>
+
+    </div>
+
+    
+    
+</body>
+</html>
