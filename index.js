@@ -174,6 +174,22 @@ app.post("/createData/",(req,res)=>{
    
 });
 
+app.get("/fakeApi-neyos/",(req,res)=>{
+
+    // const email=req.body.email;
+    // const pwd=req.body.password;
+ 
+    // res.status("200").json({
+    //     "email":email,
+    //     "password":pwd
+    // });
+ 
+    const data=req.body;
+ 
+    res.status(200).json(data.data);
+    
+ });
+
 
 app.put("/UpdateData/users/:id",(req,res)=>{
 
