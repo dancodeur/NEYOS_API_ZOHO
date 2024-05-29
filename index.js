@@ -156,7 +156,7 @@ app.post("/createData/", async (req,res)=>{
     const data=[{"email":email,"password":pwd}];
 
     try {
-        const sendData= await fetch("https://www.zu.eu/",{
+        const sendData= await fetch("https://www.zohoapis.eu/crm/v2/functions/testapi3insertdata/actions/execute?auth_type=apikey&zapikey=1003.046d44b180983914e7cf266535f56509.e73a90a86ca04704d972d83c100f0b45",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
