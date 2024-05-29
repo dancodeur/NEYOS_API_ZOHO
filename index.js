@@ -156,15 +156,17 @@ app.post("/createData/", async (req,res)=>{
     const data=[{"email":email,"password":pwd}];
 
     try {
-        const sendData= await fetch("https://www.zohoapis.eu/crm/v2/functions/testapi3insertdata/actions/execute?auth_type=apikey&zapikey=1003.046d44b180983914e7cf266535f56509.e73a90a86ca04704d972d83c100f0b45",{
+        const sendData= await fetch("https://www.zu.eu/",{
             method:"POST",
             headers:{
-                "Content-Type":"application/x-www-form-urlencoded",
+                "Content-Type":"application/json",
             },
             body:JSON.stringify(data)    
         });
 
-        res.send(data);
+        const responseOk=await sendData.json();
+
+        res.status(500).send("An error occurred");
 
     }catch(err){
         console.log(err);
@@ -176,7 +178,6 @@ app.post("/createData/", async (req,res)=>{
     //     "password":pwd
     // });
 });
-
 
 
 
