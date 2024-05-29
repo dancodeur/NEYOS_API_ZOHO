@@ -3,8 +3,10 @@ import fetch from "node-fetch";
 import dotenv from "dotenv";
 import express from "express";
 import axios from "axios";
+import morgan from "morgan";
 import { fileURLToPath } from 'url';
 import path from "path";
+
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -90,6 +92,7 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use('/public',express.static(path.join(__dirname, 'public')));
+app.use(morgan("dev"));
 // // Create an instance of Axios for making HTTP requests.
 // const axiosInstance = axios.create();
 
@@ -143,11 +146,25 @@ app.get('/', (req, res) => {
      res.render("index");
 });
 
+/******TEST Router */
+
+app.post("/createData/",(req,res)=>{
+
+    const email=req.body.email;
+    const pwd=req.body.password;
+
+    // const sendData= await fetch("")
+
+    res.status("200").json({
+        "email":email,
+        "password":pwd
+    });
+});
 
 
 
 
 
 app.listen(PORT, () => {
-  console.log('Server is running in port 3000');
+  console.log(`Server is running in port ${PORT}`);
 });
