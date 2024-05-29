@@ -175,7 +175,7 @@ app.post("/createData/",(req,res)=>{
 });
 
 
-app.put("/UpdateData/",(req,res)=>{
+app.put("/UpdateData/users/:id",(req,res)=>{
 
    // const email=req.body.email;
    // const pwd=req.body.password;
@@ -186,9 +186,10 @@ app.put("/UpdateData/",(req,res)=>{
    // });
 
    const data=req.body;
+   const id=req.params.id;
 
    res.status(200).json({
-       "message":"requette success !!!",
+       "message":"users  ' "+id+ " ' update ",
        "data":data.data
    });
    
