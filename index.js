@@ -6,6 +6,7 @@ import axios from "axios";
 import morgan from "morgan";
 import { fileURLToPath } from 'url';
 import path from "path";
+// import router from "../NEYOS_API_ZOHO/api/testRouter";
 
 dotenv.config();
 
@@ -140,33 +141,60 @@ app.get('/custom-authorization-request',(req,res)=>{
     res.render("form-authorization-token",{generate_auth_token});
 });
 
-
-
-app.get('/', (req, res) => {
-     res.render("index");
+app.listen(PORT, () => {
+  console.log(`Server is running in port ${PORT}`);
 });
 
+//FAKE API
+
 /******TEST Router */
+const Fakedata=[
+    {"id":1, name:"Jean Dupont", email: "jean.dupont@example.com"},
+    {"id":2, name:"Marie Curie", email:"marie.curie@example.com"},
+    {"id":2, name:"Albert Einstein", email:"albert.einstein@example.com"}
+];
+
+app.get('/', (req, res) => {
+    res.render("index");
+});
 
 app.post("/createData/",(req,res)=>{
 
-    // const email=req.body.email;
-    // const pwd=req.body.password;
+   // const email=req.body.email;
+   // const pwd=req.body.password;
 
-    // res.status("200").json({
-    //     "email":email,
-    //     "password":pwd
-    // });
+   // res.status("200").json({
+   //     "email":email,
+   //     "password":pwd
+   // });
 
-    const data=req.body;
+   const data=req.body;
 
-    res.status("200").json(data.data);
-    
+   res.status(200).json(data.data);
+   
 });
 
 
+app.put("/UpdateData/",(req,res)=>{
 
+   // const email=req.body.email;
+   // const pwd=req.body.password;
 
-app.listen(PORT, () => {
-  console.log(`Server is running in port ${PORT}`);
+   // res.status("200").json({
+   //     "email":email,
+   //     "password":pwd
+   // });
+
+   const data=req.body;
+
+   res.status(200).json({
+       "message":"requette success !!!",
+       "data":data.data
+   });
+   
+});
+
+app.get("/getData/",(req,res)=>{
+     
+   res.status(200).send(Fakedata);
 });
