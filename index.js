@@ -190,6 +190,8 @@ app.get("/fakeApi-neyos/",(req,res)=>{
     
  });
 
+ 
+
 
 app.put("/UpdateData/users/:id",(req,res)=>{
 
@@ -214,4 +216,13 @@ app.put("/UpdateData/users/:id",(req,res)=>{
 app.get("/getData/",(req,res)=>{
      
    res.status(200).send(Fakedata);
+});
+
+//Creation Webhook
+
+app.post('/Neyos/webhook', (req, res) => {
+
+console.log('Webhook data received:', req.body);
+res.status(200).send('Webhook received');
+
 });
