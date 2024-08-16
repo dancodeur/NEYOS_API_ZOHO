@@ -223,6 +223,8 @@ app.get("/getData/",(req,res)=>{
 app.post('/Neyos/webhook', (req, res) => {
 
 console.log('Webhook data received:', req.body);
-res.status(200).send('Webhook received');
+res.send("hello");
 
 });
+
+
