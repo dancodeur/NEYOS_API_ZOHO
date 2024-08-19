@@ -89,7 +89,7 @@ async function get_access_token(client_id="",client_secret="",redirect_uri="",co
 
 ;
 const app = express();
-app.use(express.json()); // Middleware to parse JSON request bodies
+app.use(express.json({type: 'application/json'})); // Middleware to parse JSON request bodies
 app.set("views", path.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use('/public',express.static(path.join(__dirname, 'public')));
@@ -220,7 +220,7 @@ app.get("/getData/",(req,res)=>{
 
 //Creation Webhook
 
-app.post('/Neyos/webhook', (req, res) => {
+app.post('http://51.68.46.253:3001/Neyos/webhook', (req, res) => {
 
 console.log('Webhook data received:', req.body);
 res.status(200).send(req.body);
